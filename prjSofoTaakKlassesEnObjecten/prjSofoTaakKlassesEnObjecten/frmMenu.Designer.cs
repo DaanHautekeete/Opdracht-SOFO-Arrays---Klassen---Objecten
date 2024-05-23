@@ -70,6 +70,7 @@
             this.btnNieuwContactpersoon.TabIndex = 2;
             this.btnNieuwContactpersoon.Text = "Nieuw";
             this.btnNieuwContactpersoon.UseVisualStyleBackColor = true;
+            this.btnNieuwContactpersoon.Click += new System.EventHandler(this.btnNieuwContactpersoon_Click);
             // 
             // btnWijzigContactpersoon
             // 
@@ -81,6 +82,7 @@
             this.btnWijzigContactpersoon.TabIndex = 3;
             this.btnWijzigContactpersoon.Text = "Wijzig";
             this.btnWijzigContactpersoon.UseVisualStyleBackColor = true;
+            this.btnWijzigContactpersoon.Click += new System.EventHandler(this.btnWijzigContactpersoon_Click);
             // 
             // btnVerwijderContactpersoon
             // 
