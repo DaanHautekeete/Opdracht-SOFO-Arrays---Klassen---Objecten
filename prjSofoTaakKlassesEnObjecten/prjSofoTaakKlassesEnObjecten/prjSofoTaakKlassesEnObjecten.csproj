@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAddCustomProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCustomProperties.Designer.cs">
+      <DependentUpon>frmAddCustomProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBekijk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBekijk.Designer.cs">
+      <DependentUpon>frmBekijk.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditOrNew.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,13 +70,28 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddCustomProperties.resx">
+      <DependentUpon>frmAddCustomProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBekijk.resx">
+      <DependentUpon>frmBekijk.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditOrNew.resx">
       <DependentUpon>frmEditOrNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

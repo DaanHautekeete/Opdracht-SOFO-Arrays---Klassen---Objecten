@@ -34,6 +34,7 @@
             this.btnWijzigContactpersoon = new System.Windows.Forms.Button();
             this.btnVerwijderContactpersoon = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
+            this.btnBekijk = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lsbContactpersonen
@@ -43,6 +44,8 @@
             this.lsbContactpersonen.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsbContactpersonen.FormattingEnabled = true;
             this.lsbContactpersonen.ItemHeight = 14;
+            this.lsbContactpersonen.Items.AddRange(new object[] {
+            "test"});
             this.lsbContactpersonen.Location = new System.Drawing.Point(13, 17);
             this.lsbContactpersonen.Name = "lsbContactpersonen";
             this.lsbContactpersonen.Size = new System.Drawing.Size(229, 282);
@@ -66,7 +69,7 @@
             this.btnNieuwContactpersoon.Font = new System.Drawing.Font("Mongolian Baiti", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNieuwContactpersoon.Location = new System.Drawing.Point(259, 17);
             this.btnNieuwContactpersoon.Name = "btnNieuwContactpersoon";
-            this.btnNieuwContactpersoon.Size = new System.Drawing.Size(315, 60);
+            this.btnNieuwContactpersoon.Size = new System.Drawing.Size(315, 49);
             this.btnNieuwContactpersoon.TabIndex = 2;
             this.btnNieuwContactpersoon.Text = "Nieuw";
             this.btnNieuwContactpersoon.UseVisualStyleBackColor = true;
@@ -76,9 +79,9 @@
             // 
             this.btnWijzigContactpersoon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnWijzigContactpersoon.Font = new System.Drawing.Font("Mongolian Baiti", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWijzigContactpersoon.Location = new System.Drawing.Point(259, 87);
+            this.btnWijzigContactpersoon.Location = new System.Drawing.Point(259, 75);
             this.btnWijzigContactpersoon.Name = "btnWijzigContactpersoon";
-            this.btnWijzigContactpersoon.Size = new System.Drawing.Size(315, 60);
+            this.btnWijzigContactpersoon.Size = new System.Drawing.Size(315, 49);
             this.btnWijzigContactpersoon.TabIndex = 3;
             this.btnWijzigContactpersoon.Text = "Wijzig";
             this.btnWijzigContactpersoon.UseVisualStyleBackColor = true;
@@ -88,23 +91,37 @@
             // 
             this.btnVerwijderContactpersoon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerwijderContactpersoon.Font = new System.Drawing.Font("Mongolian Baiti", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerwijderContactpersoon.Location = new System.Drawing.Point(259, 161);
+            this.btnVerwijderContactpersoon.Location = new System.Drawing.Point(259, 191);
             this.btnVerwijderContactpersoon.Name = "btnVerwijderContactpersoon";
-            this.btnVerwijderContactpersoon.Size = new System.Drawing.Size(315, 60);
+            this.btnVerwijderContactpersoon.Size = new System.Drawing.Size(315, 49);
             this.btnVerwijderContactpersoon.TabIndex = 4;
             this.btnVerwijderContactpersoon.Text = "Verwijder";
             this.btnVerwijderContactpersoon.UseVisualStyleBackColor = true;
+            this.btnVerwijderContactpersoon.Click += new System.EventHandler(this.btnVerwijderContactpersoon_Click);
             // 
             // btnSettings
             // 
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Mongolian Baiti", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.Location = new System.Drawing.Point(259, 235);
+            this.btnSettings.Location = new System.Drawing.Point(259, 249);
             this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(315, 60);
+            this.btnSettings.Size = new System.Drawing.Size(315, 49);
             this.btnSettings.TabIndex = 5;
             this.btnSettings.Text = "Settings";
             this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // btnBekijk
+            // 
+            this.btnBekijk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBekijk.Font = new System.Drawing.Font("Mongolian Baiti", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBekijk.Location = new System.Drawing.Point(259, 133);
+            this.btnBekijk.Name = "btnBekijk";
+            this.btnBekijk.Size = new System.Drawing.Size(315, 49);
+            this.btnBekijk.TabIndex = 5;
+            this.btnBekijk.Text = "Bekijk Info";
+            this.btnBekijk.UseVisualStyleBackColor = true;
+            this.btnBekijk.Click += new System.EventHandler(this.btnBekijk_Click);
             // 
             // frmMenu
             // 
@@ -112,6 +129,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(586, 493);
+            this.Controls.Add(this.btnBekijk);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnVerwijderContactpersoon);
             this.Controls.Add(this.btnWijzigContactpersoon);
@@ -132,6 +150,7 @@
         private System.Windows.Forms.Button btnWijzigContactpersoon;
         private System.Windows.Forms.Button btnVerwijderContactpersoon;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnBekijk;
     }
 }
 
