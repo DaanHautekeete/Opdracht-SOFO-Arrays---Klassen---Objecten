@@ -24,4 +24,4 @@ Indien u bepaalde eigenschappen wilt wijzigen of verwijderen, gelieve te kijken 
 Indien u niet tevreden bent met de informatie van een contactpersoon, kunt u deze heel eenvoudig wijzigen.
 
 ## Credits
-De inhoud van dit repository behoort volledig toe aan Luka Verbrugghe en Daan Hautekeete.
+Het intelectueel eigendom van Luka Verbrugghe en Daan Hautekeete strekt zich uit tot, maar is niet beperkt tot de code, de design, kleuren en afbeeldingen.
