@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contactpersoon.cs" />
     <Compile Include="frmAddCustomProperties.cs">
       <SubType>Form</SubType>
     </Compile>
