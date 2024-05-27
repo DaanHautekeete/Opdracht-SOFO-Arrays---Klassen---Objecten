@@ -53,5 +53,63 @@ namespace prjSofoTaakKlassesEnObjecten {
 
             frmAddCustomProperties.Show();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            //enige vereiste --> naam
+            //rest is optioneel
+            if (txtNaam.Text.Trim() == string.Empty || txtVoornaam.Text.Trim() == string.Empty)
+            {
+                //niet in orde --> waarschuwing
+                MessageBox.Show("Naam en voornaam zijn verplichte velden. Gelieve hier iets in te geven.", "Error: Invoer leeg", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                //invoer is correct --> opslaan in klasse
+                //naam en voornaam zijn niet leeg --> in nieuw object
+                //de rest checken
+                Contactpersoon contactpersoon = new Contactpersoon();
+
+                contactpersoon.Naam = txtNaam.Text;
+                contactpersoon.Voornaam = txtVoornaam.Text;
+
+                if (txtTelefoonnummer.Text.Trim() != string.Empty)
+                {
+                    contactpersoon.Telefoonnummer = txtTelefoonnummer.Text;
+                }
+                if (txtEmailadres.Text.Trim() != string.Empty)
+                {
+                    contactpersoon.Emailadres = txtEmailadres.Text;
+                }
+                if (txtAdres.Text.Trim() != string.Empty)
+                {
+                    contactpersoon.Straatnaam = txtAdres.Text;
+                }
+                if (txtHuisnummer.Text.Trim() != string.Empty)
+                {
+                    contactpersoon.Huisnummer = txtHuisnummer.Text;
+                }
+
+                if (rdbJa.Checked)
+                {
+                    contactpersoon.Appartement = true;
+                }
+                else
+                {
+                    contactpersoon.Appartement = false;
+                }
+
+                if (txtBus.Text.Trim() != string.Empty)
+                {
+                    contactpersoon.Bus = txtBus.Text;
+                }
+                if (txtLand.Text.Trim() != string.Empty)
+                {
+                    contactpersoon.Land = txtLand.Text;
+                }
+
+                //alle properties van het contactpersoon zijn nu aangevuld (behalve de foto natuurlijk)
+            }
+        }
     }
 }
