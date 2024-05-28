@@ -13,13 +13,10 @@ namespace prjSofoTaakKlassesEnObjecten
 {
     public partial class frmMenu : Form
     {
-        public string nieuwContactAanmakenTitel = "NIEUW CONTACT AANMAKEN";
-        public int intNieuwContactIndex = 0;
-
         //array aanmaken voor alle objecten
-        //kolom 1 => namen van de contactpersonen
+        //kolom 1 => object van contactpersoon
         //kolom 2 => foto's van de contactpersonen
-        public object[,] contacten;
+        object[,] arrContacten;
 
         //var aanmaken voor aantal personen in array
         public int intIndexContactpersoon = 0;
@@ -33,11 +30,20 @@ namespace prjSofoTaakKlassesEnObjecten
             btnVerwijderContactpersoon.Enabled = false;
             btnWijzigContactpersoon.Enabled = false;
 
+            //groupboxen locken bij opstarten
+            grpbMakenWijzigen.Enabled = false;
+
         }
+
+        ///|/////////////////////////////////////////////////////////////////////////////////////
+        //|Alle knoppen
+        ///|/////////////////////////////////////////////////////////////////////////////////////
 
         private void btnNieuwContactpersoon_Click(object sender, EventArgs e)
         {
-
+            //groupbox unlocken
+            grpbMakenWijzigen.Enabled = true;
+            grpbMakenWijzigen.Text = "Nieuw contactpersoon";
         }
 
         private void btnWijzigContactpersoon_Click(object sender, EventArgs e)
@@ -117,22 +123,24 @@ namespace prjSofoTaakKlassesEnObjecten
                     contactpersoon.Land = txtLand.Text;
                 }
 
-                //alle properties van het contactpersoon zijn nu aangevuld (behalve de foto natuurlijk)
 
-                //object / contactpersoon toevoegen aan array
-                frmMenu frmMenu = new frmMenu();
-                frmMenu.contacten[frmMenu.intIndexContactpersoon, 0] = contactpersoon;
+                arrContacten[intIndexContactpersoon, 0] = contactpersoon.Naam;
 
-                contactpersoon.reloadLsbContactpersonen();
 
-                //index van contactpersoon + 1
-                frmMenu.intIndexContactpersoon++;
+                foreach (object objPersoon in arrContacten)
+                {
+                    lsbContactpersonen.Items.Add(objPersoon.ToString());
+                }
+
             }
+
         }
 
+        //code om github repository te openen
         private void linklabelGithubRepository_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/DaanHautekeete/Opdracht-SOFO-Arrays---Klassen---Objecten");
         }
     }
 }
+

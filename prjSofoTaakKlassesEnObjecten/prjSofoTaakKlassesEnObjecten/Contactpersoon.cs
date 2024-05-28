@@ -172,15 +172,6 @@ namespace prjSofoTaakKlassesEnObjecten
             }
         }
 
-        public void reloadLsbContactpersonen()
-        {
-            frmMenu.lsbContactpersonen.Items.Clear();
-            for (int i = 0; i <= frmMenu.contacten.GetUpperBound(0); i++)
-            {
-                //Alle items toevoegen
-                frmMenu.lsbContactpersonen.Items.Add(frmMenu.contacten[i, 0]);
-            }
-        }
 
         ///|/////////////////////////////////////////////////////////////////////////////////////
         //|Constructor
@@ -197,6 +188,7 @@ namespace prjSofoTaakKlassesEnObjecten
             _Land = strLand;
             _Stad = strStad;
         }
+
         
     }
 }
