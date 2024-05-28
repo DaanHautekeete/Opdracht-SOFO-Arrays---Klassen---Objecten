@@ -11,6 +11,8 @@ using System.Windows.Forms;
 namespace prjSofoTaakKlassesEnObjecten {
     public partial class frmEditOrNew : Form {
 
+
+
         public frmEditOrNew() {
             InitializeComponent();
             frmMenu frmMenu = new frmMenu();
@@ -109,6 +111,15 @@ namespace prjSofoTaakKlassesEnObjecten {
                 }
 
                 //alle properties van het contactpersoon zijn nu aangevuld (behalve de foto natuurlijk)
+
+                //object / contactpersoon toevoegen aan array
+                frmMenu frmMenu = new frmMenu();
+                frmMenu.contacten[frmMenu.intIndexContactpersoon,0] = contactpersoon;
+
+                frmMenu.reloadLsb();
+
+                //index van contactpersoon + 1
+                frmMenu.intIndexContactpersoon++;
             }
         }
     }

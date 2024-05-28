@@ -14,6 +14,16 @@ namespace prjSofoTaakKlassesEnObjecten
     public partial class frmMenu : Form
     {
         public string nieuwContactAanmakenTitel = "NIEUW CONTACT AANMAKEN";
+        public int intNieuwContactIndex = 0;
+
+        //array aanmaken voor alle objecten
+        //kolom 1 => namen van de contactpersonen
+        //kolom 2 => foto's van de contactpersonen
+        public object[,] contacten;
+
+        //var aanmaken voor aantal personen in array
+        public int intIndexContactpersoon = 0;
+
         public frmMenu()
         {
             InitializeComponent();
@@ -31,12 +41,14 @@ namespace prjSofoTaakKlassesEnObjecten
             btnWijzigContactpersoon.Enabled = false;
         }
 
-        private void btnNieuwContactpersoon_Click(object sender, EventArgs e) {
+        private void btnNieuwContactpersoon_Click(object sender, EventArgs e)
+        {
             frmEditOrNew frmEditOrNew = new frmEditOrNew();
             frmEditOrNew.Show();
         }
 
-        private void btnWijzigContactpersoon_Click(object sender, EventArgs e) {
+        private void btnWijzigContactpersoon_Click(object sender, EventArgs e)
+        {
 
         }
 
@@ -57,6 +69,15 @@ namespace prjSofoTaakKlassesEnObjecten
             frmSettings frmSettings = new frmSettings();
 
             frmSettings.Show();
+        }
+
+        public void reloadLsb()
+        {
+            lsbContactpersonen.Items.Clear();
+            for (int i = 0; i <= contacten.GetUpperBound(0); i++)
+            {
+                //Alle items toevoegen
+            }
         }
     }
 }
