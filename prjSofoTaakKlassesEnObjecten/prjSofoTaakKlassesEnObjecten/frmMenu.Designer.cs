@@ -44,10 +44,10 @@
             this.txtStad = new System.Windows.Forms.TextBox();
             this.txtLand = new System.Windows.Forms.TextBox();
             this.txtBus = new System.Windows.Forms.TextBox();
-            this.rdbNeen = new System.Windows.Forms.RadioButton();
-            this.rdbJa = new System.Windows.Forms.RadioButton();
+            this.rdbMeerdereBussenFalse = new System.Windows.Forms.RadioButton();
+            this.rdbMeerdereBussenTrue = new System.Windows.Forms.RadioButton();
             this.txtHuisnummer = new System.Windows.Forms.TextBox();
-            this.txtAdres = new System.Windows.Forms.TextBox();
+            this.txtStraatnaam = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -228,10 +228,10 @@
             this.grbAdres.Controls.Add(this.txtStad);
             this.grbAdres.Controls.Add(this.txtLand);
             this.grbAdres.Controls.Add(this.txtBus);
-            this.grbAdres.Controls.Add(this.rdbNeen);
-            this.grbAdres.Controls.Add(this.rdbJa);
+            this.grbAdres.Controls.Add(this.rdbMeerdereBussenFalse);
+            this.grbAdres.Controls.Add(this.rdbMeerdereBussenTrue);
             this.grbAdres.Controls.Add(this.txtHuisnummer);
-            this.grbAdres.Controls.Add(this.txtAdres);
+            this.grbAdres.Controls.Add(this.txtStraatnaam);
             this.grbAdres.Controls.Add(this.label7);
             this.grbAdres.Controls.Add(this.label8);
             this.grbAdres.Controls.Add(this.label9);
@@ -269,29 +269,31 @@
             this.txtBus.Size = new System.Drawing.Size(84, 22);
             this.txtBus.TabIndex = 4;
             // 
-            // rdbNeen
+            // rdbMeerdereBussenFalse
             // 
-            this.rdbNeen.AutoSize = true;
-            this.rdbNeen.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbNeen.Location = new System.Drawing.Point(22, 98);
-            this.rdbNeen.Name = "rdbNeen";
-            this.rdbNeen.Size = new System.Drawing.Size(176, 18);
-            this.rdbNeen.TabIndex = 3;
-            this.rdbNeen.TabStop = true;
-            this.rdbNeen.Text = "Neen, er is slechts 1 postbus";
-            this.rdbNeen.UseVisualStyleBackColor = true;
+            this.rdbMeerdereBussenFalse.AutoSize = true;
+            this.rdbMeerdereBussenFalse.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMeerdereBussenFalse.Location = new System.Drawing.Point(22, 98);
+            this.rdbMeerdereBussenFalse.Name = "rdbMeerdereBussenFalse";
+            this.rdbMeerdereBussenFalse.Size = new System.Drawing.Size(176, 18);
+            this.rdbMeerdereBussenFalse.TabIndex = 3;
+            this.rdbMeerdereBussenFalse.TabStop = true;
+            this.rdbMeerdereBussenFalse.Text = "Neen, er is slechts 1 postbus";
+            this.rdbMeerdereBussenFalse.UseVisualStyleBackColor = true;
+            this.rdbMeerdereBussenFalse.CheckedChanged += new System.EventHandler(this.rdbMeerdereBussenFalse_CheckedChanged);
             // 
-            // rdbJa
+            // rdbMeerdereBussenTrue
             // 
-            this.rdbJa.AutoSize = true;
-            this.rdbJa.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbJa.Location = new System.Drawing.Point(22, 75);
-            this.rdbJa.Name = "rdbJa";
-            this.rdbJa.Size = new System.Drawing.Size(191, 18);
-            this.rdbJa.TabIndex = 3;
-            this.rdbJa.TabStop = true;
-            this.rdbJa.Text = "Ja, er zijn meerdere postbussen";
-            this.rdbJa.UseVisualStyleBackColor = true;
+            this.rdbMeerdereBussenTrue.AutoSize = true;
+            this.rdbMeerdereBussenTrue.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMeerdereBussenTrue.Location = new System.Drawing.Point(22, 75);
+            this.rdbMeerdereBussenTrue.Name = "rdbMeerdereBussenTrue";
+            this.rdbMeerdereBussenTrue.Size = new System.Drawing.Size(191, 18);
+            this.rdbMeerdereBussenTrue.TabIndex = 3;
+            this.rdbMeerdereBussenTrue.TabStop = true;
+            this.rdbMeerdereBussenTrue.Text = "Ja, er zijn meerdere postbussen";
+            this.rdbMeerdereBussenTrue.UseVisualStyleBackColor = true;
+            this.rdbMeerdereBussenTrue.CheckedChanged += new System.EventHandler(this.rdbMeerdereBussenTrue_CheckedChanged);
             // 
             // txtHuisnummer
             // 
@@ -301,13 +303,13 @@
             this.txtHuisnummer.Size = new System.Drawing.Size(58, 22);
             this.txtHuisnummer.TabIndex = 2;
             // 
-            // txtAdres
+            // txtStraatnaam
             // 
-            this.txtAdres.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdres.Location = new System.Drawing.Point(93, 19);
-            this.txtAdres.Name = "txtAdres";
-            this.txtAdres.Size = new System.Drawing.Size(207, 22);
-            this.txtAdres.TabIndex = 1;
+            this.txtStraatnaam.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStraatnaam.Location = new System.Drawing.Point(93, 19);
+            this.txtStraatnaam.Name = "txtStraatnaam";
+            this.txtStraatnaam.Size = new System.Drawing.Size(207, 22);
+            this.txtStraatnaam.TabIndex = 1;
             // 
             // label7
             // 
@@ -491,7 +493,7 @@
             this.grpbMakenWijzigen.Size = new System.Drawing.Size(483, 570);
             this.grpbMakenWijzigen.TabIndex = 12;
             this.grpbMakenWijzigen.TabStop = false;
-            this.grpbMakenWijzigen.Text = "Info komt hier";
+            this.grpbMakenWijzigen.Text = "Nieuw/wijzig/lees contactpersoon";
             // 
             // btnNewCustomProperty
             // 
@@ -547,7 +549,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Exit";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // grpbInfo
             // 
@@ -635,10 +637,10 @@
         private System.Windows.Forms.TextBox txtStad;
         private System.Windows.Forms.TextBox txtLand;
         private System.Windows.Forms.TextBox txtBus;
-        private System.Windows.Forms.RadioButton rdbNeen;
-        private System.Windows.Forms.RadioButton rdbJa;
+        private System.Windows.Forms.RadioButton rdbMeerdereBussenFalse;
+        private System.Windows.Forms.RadioButton rdbMeerdereBussenTrue;
         private System.Windows.Forms.TextBox txtHuisnummer;
-        private System.Windows.Forms.TextBox txtAdres;
+        private System.Windows.Forms.TextBox txtStraatnaam;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;

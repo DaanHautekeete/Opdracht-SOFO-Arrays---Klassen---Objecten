@@ -52,6 +52,9 @@ namespace prjSofoTaakKlassesEnObjecten
             //groupbox unlocken
             grpbMakenWijzigen.Enabled = true;
             grpbMakenWijzigen.Text = "Nieuw contactpersoon";
+
+            //standaardwaarde meegeven voor keuze appartement
+            rdbMeerdereBussenFalse.Checked = true;
         }
 
         private void btnWijzigContactpersoon_Click(object sender, EventArgs e)
@@ -108,16 +111,16 @@ namespace prjSofoTaakKlassesEnObjecten
                 {
                     contactpersoon.Emailadres = txtEmailadres.Text;
                 }
-                if (txtAdres.Text.Trim() != string.Empty)
+                if (txtStraatnaam.Text.Trim() != string.Empty)
                 {
-                    contactpersoon.Straatnaam = txtAdres.Text;
+                    contactpersoon.Straatnaam = txtStraatnaam.Text;
                 }
                 if (txtHuisnummer.Text.Trim() != string.Empty)
                 {
                     contactpersoon.Huisnummer = txtHuisnummer.Text;
                 }
 
-                if (rdbJa.Checked)
+                if (rdbMeerdereBussenTrue.Checked)
                 {
                     contactpersoon.Appartement = true;
                 }
@@ -138,10 +141,17 @@ namespace prjSofoTaakKlassesEnObjecten
                 arrContacten[intIndexContactpersoon, 0] = contactpersoon;
 
                 // Voeg de naam van de contactpersoon toe aan de listbox
-                lsbContactpersonen.Items.Add(contactpersoon.Naam);
+                lsbContactpersonen.Items.Add(contactpersoon.Naam + " " + contactpersoon.Voornaam);
 
                 // Verhoog de index voor de volgende contactpersoon
                 intIndexContactpersoon++;
+
+                //alle invoer verwijderen en groupbox vergrendelen
+                InvoerResetten();
+
+                //properties van groupbox wijzigen
+                grpbMakenWijzigen.Text = "Nieuw/wijzig/lees contactpersoon";
+                grpbMakenWijzigen.Enabled = false;
             }
         }
 
@@ -154,15 +164,79 @@ namespace prjSofoTaakKlassesEnObjecten
         //code om een bestaand contactpersoon te selecteren
         private void lsbContactpersonen_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //listbox leegmaken
+            lsbBasisinfoContactpersonen.Items.Clear();
+
             //index van geselecteerd contactpersoon veranderen
             intIndexGeselecteerdContactpersoon = lsbContactpersonen.SelectedIndex;
 
-            Contactpersoon GeselecteerdContactpersoon = (Contactpersoon)arrContacten[intIndexGeselecteerdContactpersoon, 0];
+            if(lsbContactpersonen.SelectedIndex != -1)
+            {
+                Contactpersoon GeselecteerdContactpersoon = (Contactpersoon)arrContacten[intIndexGeselecteerdContactpersoon, 0];
 
-            //preview aanpassen
-            lsbBasisinfoContactpersonen.Items.Add(GeselecteerdContactpersoon.Naam);
-            lsbBasisinfoContactpersonen.Items.Add(GeselecteerdContactpersoon.Voornaam);
-            lsbBasisinfoContactpersonen.Items.Add(GeselecteerdContactpersoon.Emailadres);
+                //preview aanpassen
+                lsbBasisinfoContactpersonen.Items.Add("Naam: " + GeselecteerdContactpersoon.Naam + " " + GeselecteerdContactpersoon.Voornaam);
+                lsbBasisinfoContactpersonen.Items.Add("Email: " + GeselecteerdContactpersoon.Emailadres);
+                lsbBasisinfoContactpersonen.Items.Add("Telefoonnummer: " + GeselecteerdContactpersoon.Telefoonnummer);
+
+                //knop wijzigen, lezen en verwijderen inschakelen
+                btnBekijk.Enabled = true;
+                btnWijzigContactpersoon.Enabled = true;
+                btnVerwijderContactpersoon.Enabled = true;
+            }
+            else
+            {
+                MessageBox.Show("Kies een geldig contactpersoon", "Ongeldige keuze", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
+
+        //radiobuttons om keuze appartement te maken
+        private void rdbMeerdereBussenTrue_CheckedChanged(object sender, EventArgs e)
+        {
+            //textbox van bus inschakelen
+            txtBus.Enabled = true;
+        }
+
+        private void rdbMeerdereBussenFalse_CheckedChanged(object sender, EventArgs e)
+        {
+            txtBus.Enabled = false;
+        }
+
+        //knop om programma af te sluiten
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            DialogResult dlgKeuze = MessageBox.Show("Bent u zeker dat u het programma wilt afsluiten?\nDit resulteert in het verliezen in alle gegevens!", "Programma sluiten", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dlgKeuze == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
+        }
+
+        ///|/////////////////////////////////////////////////////////////////////////////////////
+        //|Eigen functies
+        ///|/////////////////////////////////////////////////////////////////////////////////////
+        private void InvoerResetten()
+        {
+            //alle invoer resetten
+            //algemene info
+            txtNaam.Clear();
+            txtVoornaam.Clear();
+            txtTelefoonnummer.Clear();
+            txtEmailadres.Clear();
+
+            //adres
+            txtStraatnaam.Clear();
+            txtHuisnummer.Clear();
+            rdbMeerdereBussenFalse.Checked = true;
+            //rdbMeerdereBussenTrue.Checked = false;
+            txtBus.Clear();
+            txtBus.Enabled = false;
+            txtLand.Clear();
+            txtStad.Clear();
+        }
+
+
     }
 }
