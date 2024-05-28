@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace prjSofoTaakKlassesEnObjecten
 {
+
+    
     internal class Contactpersoon
     {
+
+        frmMenu frmMenu = new frmMenu();
         ///|/////////////////////////////////////////////////////////////////////////////////////
         //|Eigenschappen aanmaken
         ///|/////////////////////////////////////////////////////////////////////////////////////
@@ -168,11 +172,20 @@ namespace prjSofoTaakKlassesEnObjecten
             }
         }
 
+        public void reloadLsbContactpersonen()
+        {
+            frmMenu.lsbContactpersonen.Items.Clear();
+            for (int i = 0; i <= frmMenu.contacten.GetUpperBound(0); i++)
+            {
+                //Alle items toevoegen
+                frmMenu.lsbContactpersonen.Items.Add(frmMenu.contacten[i, 0]);
+            }
+        }
 
         ///|/////////////////////////////////////////////////////////////////////////////////////
         //|Constructor
         ///|/////////////////////////////////////////////////////////////////////////////////////
-        
+
         public Contactpersoon(string strNaam, string strVooraam, string strTelefoonnummer, string strEmailadres, string strStraatnaam, string strHuisnummer, bool blnAppartement, string strBus, string strLand, string strStad)
         {
             _Naam = strNaam;
