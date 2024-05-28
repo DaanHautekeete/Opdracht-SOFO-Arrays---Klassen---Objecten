@@ -25,6 +25,9 @@ namespace prjSofoTaakKlassesEnObjecten
         {
             InitializeComponent();
 
+            //arrContacten initialiseren met een geschat aantal contactpersonen
+            arrContacten = new object[100, 2];
+
             //knoppen vergrendelen die gebruiker bij opstarten niet kan gebruiken
             btnBekijk.Enabled = false;
             btnVerwijderContactpersoon.Enabled = false;
@@ -32,7 +35,6 @@ namespace prjSofoTaakKlassesEnObjecten
 
             //groupboxen locken bij opstarten
             grpbMakenWijzigen.Enabled = false;
-
         }
 
         ///|/////////////////////////////////////////////////////////////////////////////////////
@@ -67,7 +69,6 @@ namespace prjSofoTaakKlassesEnObjecten
 
             frmSettings.Show();
         }
-
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -123,17 +124,14 @@ namespace prjSofoTaakKlassesEnObjecten
                     contactpersoon.Land = txtLand.Text;
                 }
 
+                arrContacten[intIndexContactpersoon, 0] = contactpersoon;
 
-                arrContacten[intIndexContactpersoon, 0] = contactpersoon.Naam;
+                // Voeg de naam van de contactpersoon toe aan de listbox
+                lsbContactpersonen.Items.Add(contactpersoon.Naam);
 
-
-                foreach (object objPersoon in arrContacten)
-                {
-                    lsbContactpersonen.Items.Add(objPersoon.ToString());
-                }
-
+                // Verhoog de index voor de volgende contactpersoon
+                intIndexContactpersoon++;
             }
-
         }
 
         //code om github repository te openen
@@ -143,4 +141,3 @@ namespace prjSofoTaakKlassesEnObjecten
         }
     }
 }
-
