@@ -72,8 +72,8 @@
             this.grpbCustomProperties = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.grpbInfo = new System.Windows.Forms.GroupBox();
-            this.lblInfo = new System.Windows.Forms.Label();
             this.linklabelGithubRepository = new System.Windows.Forms.LinkLabel();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.grbCustomProperties.SuspendLayout();
             this.grbAdres.SuspendLayout();
             this.grbAlgemeneInfo.SuspendLayout();
@@ -87,26 +87,26 @@
             // 
             this.lsbContactpersonen.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.lsbContactpersonen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lsbContactpersonen.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsbContactpersonen.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsbContactpersonen.FormattingEnabled = true;
-            this.lsbContactpersonen.ItemHeight = 14;
-            this.lsbContactpersonen.Items.AddRange(new object[] {
-            "test"});
+            this.lsbContactpersonen.ItemHeight = 23;
             this.lsbContactpersonen.Location = new System.Drawing.Point(12, 183);
             this.lsbContactpersonen.Name = "lsbContactpersonen";
-            this.lsbContactpersonen.Size = new System.Drawing.Size(557, 254);
+            this.lsbContactpersonen.ScrollAlwaysVisible = true;
+            this.lsbContactpersonen.Size = new System.Drawing.Size(557, 232);
             this.lsbContactpersonen.TabIndex = 0;
+            this.lsbContactpersonen.SelectedIndexChanged += new System.EventHandler(this.lsbContactpersonen_SelectedIndexChanged);
             // 
             // lsbBasisinfoContactpersonen
             // 
             this.lsbBasisinfoContactpersonen.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.lsbBasisinfoContactpersonen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lsbBasisinfoContactpersonen.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsbBasisinfoContactpersonen.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsbBasisinfoContactpersonen.FormattingEnabled = true;
-            this.lsbBasisinfoContactpersonen.ItemHeight = 14;
+            this.lsbBasisinfoContactpersonen.ItemHeight = 23;
             this.lsbBasisinfoContactpersonen.Location = new System.Drawing.Point(12, 443);
             this.lsbBasisinfoContactpersonen.Name = "lsbBasisinfoContactpersonen";
-            this.lsbBasisinfoContactpersonen.Size = new System.Drawing.Size(557, 170);
+            this.lsbBasisinfoContactpersonen.Size = new System.Drawing.Size(557, 163);
             this.lsbBasisinfoContactpersonen.TabIndex = 1;
             // 
             // btnNieuwContactpersoon
@@ -247,26 +247,26 @@
             // 
             // txtStad
             // 
-            this.txtStad.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStad.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStad.Location = new System.Drawing.Point(298, 132);
             this.txtStad.Name = "txtStad";
-            this.txtStad.Size = new System.Drawing.Size(164, 20);
+            this.txtStad.Size = new System.Drawing.Size(164, 22);
             this.txtStad.TabIndex = 6;
             // 
             // txtLand
             // 
-            this.txtLand.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLand.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLand.Location = new System.Drawing.Point(56, 132);
             this.txtLand.Name = "txtLand";
-            this.txtLand.Size = new System.Drawing.Size(128, 20);
+            this.txtLand.Size = new System.Drawing.Size(128, 22);
             this.txtLand.TabIndex = 5;
             // 
             // txtBus
             // 
-            this.txtBus.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBus.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBus.Location = new System.Drawing.Point(378, 74);
             this.txtBus.Name = "txtBus";
-            this.txtBus.Size = new System.Drawing.Size(84, 20);
+            this.txtBus.Size = new System.Drawing.Size(84, 22);
             this.txtBus.TabIndex = 4;
             // 
             // rdbNeen
@@ -295,18 +295,18 @@
             // 
             // txtHuisnummer
             // 
-            this.txtHuisnummer.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHuisnummer.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHuisnummer.Location = new System.Drawing.Point(404, 19);
             this.txtHuisnummer.Name = "txtHuisnummer";
-            this.txtHuisnummer.Size = new System.Drawing.Size(58, 20);
+            this.txtHuisnummer.Size = new System.Drawing.Size(58, 22);
             this.txtHuisnummer.TabIndex = 2;
             // 
             // txtAdres
             // 
-            this.txtAdres.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdres.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAdres.Location = new System.Drawing.Point(93, 19);
             this.txtAdres.Name = "txtAdres";
-            this.txtAdres.Size = new System.Drawing.Size(207, 20);
+            this.txtAdres.Size = new System.Drawing.Size(207, 22);
             this.txtAdres.TabIndex = 1;
             // 
             // label7
@@ -398,34 +398,34 @@
             // 
             // txtEmailadres
             // 
-            this.txtEmailadres.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailadres.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailadres.Location = new System.Drawing.Point(92, 124);
             this.txtEmailadres.Name = "txtEmailadres";
-            this.txtEmailadres.Size = new System.Drawing.Size(214, 20);
+            this.txtEmailadres.Size = new System.Drawing.Size(214, 22);
             this.txtEmailadres.TabIndex = 15;
             // 
             // txtTelefoonnummer
             // 
-            this.txtTelefoonnummer.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefoonnummer.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefoonnummer.Location = new System.Drawing.Point(131, 91);
             this.txtTelefoonnummer.Name = "txtTelefoonnummer";
-            this.txtTelefoonnummer.Size = new System.Drawing.Size(175, 20);
+            this.txtTelefoonnummer.Size = new System.Drawing.Size(175, 22);
             this.txtTelefoonnummer.TabIndex = 14;
             // 
             // txtVoornaam
             // 
-            this.txtVoornaam.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVoornaam.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVoornaam.Location = new System.Drawing.Point(89, 53);
             this.txtVoornaam.Name = "txtVoornaam";
-            this.txtVoornaam.Size = new System.Drawing.Size(217, 20);
+            this.txtVoornaam.Size = new System.Drawing.Size(217, 22);
             this.txtVoornaam.TabIndex = 12;
             // 
             // txtNaam
             // 
-            this.txtNaam.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNaam.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNaam.Location = new System.Drawing.Point(60, 15);
             this.txtNaam.Name = "txtNaam";
-            this.txtNaam.Size = new System.Drawing.Size(246, 20);
+            this.txtNaam.Size = new System.Drawing.Size(246, 22);
             this.txtNaam.TabIndex = 11;
             // 
             // label4
@@ -560,17 +560,6 @@
             this.grpbInfo.TabStop = false;
             this.grpbInfo.Text = "Algemene uitleg";
             // 
-            // lblInfo
-            // 
-            this.lblInfo.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(6, 16);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(544, 91);
-            this.lblInfo.TabIndex = 0;
-            this.lblInfo.Text = "Dit project is gemaakt door: Luka Verbrugghe en Daan Hautekeete.\r\nAlle informatie" +
-    " kunt u bekijken op de Github repository door op de link hieronder te klikken.\r\n" +
-    "\r\nAlle rechten zijn voorbehouden";
-            // 
             // linklabelGithubRepository
             // 
             this.linklabelGithubRepository.AutoSize = true;
@@ -582,6 +571,17 @@
             this.linklabelGithubRepository.TabStop = true;
             this.linklabelGithubRepository.Text = "Github repository";
             this.linklabelGithubRepository.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklabelGithubRepository_LinkClicked);
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(6, 16);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(544, 91);
+            this.lblInfo.TabIndex = 0;
+            this.lblInfo.Text = "Dit project is gemaakt door: Luka Verbrugghe en Daan Hautekeete.\r\nAlle informatie" +
+    " kunt u bekijken op de Github repository door op de link hieronder te klikken.\r\n" +
+    "\r\nAlle rechten zijn voorbehouden";
             // 
             // frmMenu
             // 

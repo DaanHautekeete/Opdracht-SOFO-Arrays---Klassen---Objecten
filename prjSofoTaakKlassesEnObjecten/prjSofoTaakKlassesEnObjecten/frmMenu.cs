@@ -13,13 +13,19 @@ namespace prjSofoTaakKlassesEnObjecten
 {
     public partial class frmMenu : Form
     {
+        ///|/////////////////////////////////////////////////////////////////////////////////////
+        //|Modulaire variablen
+        ///|/////////////////////////////////////////////////////////////////////////////////////
         //array aanmaken voor alle objecten
         //kolom 1 => object van contactpersoon
         //kolom 2 => foto's van de contactpersonen
         object[,] arrContacten;
 
         //var aanmaken voor aantal personen in array
-        public int intIndexContactpersoon = 0;
+        int intIndexContactpersoon = 0;
+
+        //var voor index geselecteerd contactpersoon
+        int intIndexGeselecteerdContactpersoon;
 
         public frmMenu()
         {
@@ -38,7 +44,7 @@ namespace prjSofoTaakKlassesEnObjecten
         }
 
         ///|/////////////////////////////////////////////////////////////////////////////////////
-        //|Alle knoppen
+        //|Alle knoppen en listboxen
         ///|/////////////////////////////////////////////////////////////////////////////////////
 
         private void btnNieuwContactpersoon_Click(object sender, EventArgs e)
@@ -50,11 +56,16 @@ namespace prjSofoTaakKlassesEnObjecten
 
         private void btnWijzigContactpersoon_Click(object sender, EventArgs e)
         {
+            //hier komt code om contactpersoon te wijzigen
+            //moeten controleren welke index er geselecteerd is in listbox => index gebruiken voor array met alle objecten
+            //eigenschappen moeten aangepast worden en opnieuw in dezelfde index kunnen opgeslagen worden
 
         }
 
         private void btnBekijk_Click(object sender, EventArgs e)
         {
+            //hier komt de code om het contactpersoon te bekijken => niets aanpassen
+            //alle eigenschappen worden ingevuld in de textboxen => textboxen niet kunnen aanpassen
 
         }
 
@@ -138,6 +149,20 @@ namespace prjSofoTaakKlassesEnObjecten
         private void linklabelGithubRepository_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/DaanHautekeete/Opdracht-SOFO-Arrays---Klassen---Objecten");
+        }
+
+        //code om een bestaand contactpersoon te selecteren
+        private void lsbContactpersonen_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //index van geselecteerd contactpersoon veranderen
+            intIndexGeselecteerdContactpersoon = lsbContactpersonen.SelectedIndex;
+
+            Contactpersoon GeselecteerdContactpersoon = (Contactpersoon)arrContacten[intIndexGeselecteerdContactpersoon, 0];
+
+            //preview aanpassen
+            lsbBasisinfoContactpersonen.Items.Add(GeselecteerdContactpersoon.Naam);
+            lsbBasisinfoContactpersonen.Items.Add(GeselecteerdContactpersoon.Voornaam);
+            lsbBasisinfoContactpersonen.Items.Add(GeselecteerdContactpersoon.Emailadres);
         }
     }
 }
