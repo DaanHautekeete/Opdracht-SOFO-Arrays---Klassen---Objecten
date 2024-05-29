@@ -74,13 +74,23 @@ namespace prjSofoTaakKlassesEnObjecten
 
         private void btnVerwijderContactpersoon_Click(object sender, EventArgs e)
         {
-            //object aanmaken van klasse contactpersoon
-            Contactpersoon objContactpersoonVerwijderen = new Contactpersoon();
+            //messagebox weergeven met vraag
+            DialogResult dlgKeuzeVerwijderen = MessageBox.Show("Bent u zeker dat u alle contactpersonen wilt verwijderen?","Lijst met contactpersonen verwijderen?",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
-            //tijdelijke array aanmaken voor de contacpersonen zonder degene die de gebruiker wilt verwijderen
-            object[,] arrTijdelijkeContacten = new object[100, 2];
+            if (dlgKeuzeVerwijderen == DialogResult.Yes)
+            {
+                //array met contactpersonen leegmaken
+                Array.Clear(arrContacten,0,arrContacten.GetUpperBound(0));
 
-            objContactpersoonVerwijderen.Naam 
+                //listboxen met contactpersonen en informatie legen
+                lsbBasisinfoContactpersonen.Items.Clear();
+                lsbContactpersonen.Items.Clear();
+
+                //knoppen uitschakelen
+                btnVerwijderContactpersoon.Enabled = false;
+                btnWijzigContactpersoon.Enabled = false;
+                btnBekijk.Enabled = false;
+            }
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -108,6 +118,8 @@ namespace prjSofoTaakKlassesEnObjecten
 
                 contactpersoon.Naam = txtNaam.Text;
                 contactpersoon.Voornaam = txtVoornaam.Text;
+
+                contactpersoon.VolledigeNaam = contactpersoon.Naam + " " + contactpersoon.Voornaam;
 
                 if (txtTelefoonnummer.Text.Trim() != string.Empty)
                 {
@@ -147,13 +159,16 @@ namespace prjSofoTaakKlassesEnObjecten
                 arrContacten[intIndexContactpersoon, 0] = contactpersoon;
 
                 // Voeg de naam van de contactpersoon toe aan de listbox
-                lsbContactpersonen.Items.Add(contactpersoon.Naam + " " + contactpersoon.Voornaam);
+                lsbContactpersonen.Items.Add(contactpersoon.VolledigeNaam.ToString());
 
                 // Verhoog de index voor de volgende contactpersoon
                 intIndexContactpersoon++;
 
                 //alle invoer verwijderen en groupbox vergrendelen
                 InvoerResetten();
+
+                //knop voor alle contactpersonen te wissen, inschakelen
+                btnVerwijderContactpersoon.Enabled = true;
 
                 //properties van groupbox wijzigen
                 grpbMakenWijzigen.Text = "Nieuw/wijzig/lees contactpersoon";
@@ -185,10 +200,9 @@ namespace prjSofoTaakKlassesEnObjecten
                 lsbBasisinfoContactpersonen.Items.Add("Email: " + GeselecteerdContactpersoon.Emailadres);
                 lsbBasisinfoContactpersonen.Items.Add("Telefoonnummer: " + GeselecteerdContactpersoon.Telefoonnummer);
 
-                //knop wijzigen, lezen en verwijderen inschakelen
+                //knop wijzigen en lezen
                 btnBekijk.Enabled = true;
                 btnWijzigContactpersoon.Enabled = true;
-                btnVerwijderContactpersoon.Enabled = true;
             }
             else
             {

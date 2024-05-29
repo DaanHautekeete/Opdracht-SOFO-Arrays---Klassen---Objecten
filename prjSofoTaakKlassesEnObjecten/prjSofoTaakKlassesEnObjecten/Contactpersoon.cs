@@ -19,6 +19,7 @@ namespace prjSofoTaakKlassesEnObjecten
         //algemeen
         private string _Naam;
         private string _Voornaam;
+        private string _VolledigeNaam;
         private string _Telefoonnummer;
         private string _Emailadres;
 
@@ -76,6 +77,11 @@ namespace prjSofoTaakKlassesEnObjecten
             }
         }
 
+        public string VolledigeNaam
+        {
+            get { return _VolledigeNaam; }
+            set { _VolledigeNaam = value; }
+        }
         public string Telefoonnummer
         {
             get
@@ -181,12 +187,15 @@ namespace prjSofoTaakKlassesEnObjecten
         {
             _Naam = strNaam;
             _Voornaam = strVooraam;
+            _VolledigeNaam = strNaam + " " + strVooraam;
             _Telefoonnummer = strTelefoonnummer;
             _Emailadres = strEmailadres;
             _Straatnaam = strStraatnaam;
             _Huisnummer = strHuisnummer;
             _Land = strLand;
             _Stad = strStad;
+            _Bus = strBus;
+            _Appartement = blnAppartement;
         }
 
         
