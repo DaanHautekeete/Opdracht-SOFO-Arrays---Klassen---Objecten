@@ -74,7 +74,13 @@ namespace prjSofoTaakKlassesEnObjecten
 
         private void btnVerwijderContactpersoon_Click(object sender, EventArgs e)
         {
+            //object aanmaken van klasse contactpersoon
+            Contactpersoon objContactpersoonVerwijderen = new Contactpersoon();
 
+            //tijdelijke array aanmaken voor de contacpersonen zonder degene die de gebruiker wilt verwijderen
+            object[,] arrTijdelijkeContacten = new object[100, 2];
+
+            objContactpersoonVerwijderen.Naam 
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
