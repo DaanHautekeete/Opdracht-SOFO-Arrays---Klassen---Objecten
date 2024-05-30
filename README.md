@@ -19,7 +19,7 @@ Met de custom properties heeft u de mogelijkheid om aan uw contactpersonen geper
 Om u een idee te geven, zijn hier een paar voorbeelden: Familie, Vriend, Werk, Privé,... 
 
 ### Contactpersonen verwijderen
-U kunt niet alleen contactpersonen toevoegen maar u hebt ook de optie om ze te verwijderen.
+U kunt niet alleen contactpersonen toevoegen maar u hebt ook de optie om ze allemaal te verwijderen.
 Indien u bepaalde eigenschappen wilt wijzigen of verwijderen, gelieve te kijken naar het volgend onderwerp.
 
 ### Contactpersonen wijzigen
