@@ -204,6 +204,9 @@ namespace prjSofoTaakKlassesEnObjecten
                     contactpersoon.Stad = txtStad.Text;
                 }
 
+                Image image = picProfilePicture.Image;
+                contactpersoon.ProfielfotoPad =  Convert.ToString(image);
+
                 //kijken of er een nieuw contact wordt aangemaakt of als er één gewijzigd wordt
                 if (isNew)
                 {
@@ -253,8 +256,14 @@ namespace prjSofoTaakKlassesEnObjecten
                     grpbMakenWijzigen.Text = "Nieuw/wijzig/lees contactpersoon";
                     grpbMakenWijzigen.Enabled = false;
 
+
+                //foto uit picturebox verwijderen
+                picProfilePicture.Image = null;
+
                 //form resizen
                 this.Size = new Size(cintStandaardbreedteIngeklapt, cintStandaardHoogte);
+
+
             }
 
         }
@@ -317,6 +326,21 @@ namespace prjSofoTaakKlassesEnObjecten
             }
         }
 
+        //code om foto van gebruiker toe te voegen
+        private void picProfilePicture_Click(object sender, EventArgs e)
+        {
+
+            var dialogfoto = new OpenFileDialog();
+
+            if (dialogfoto.ShowDialog() == DialogResult.OK)
+            {
+                picProfilePicture.ImageLocation = dialogfoto.FileName;
+
+                //filename van foto toevoegen aan de array van contacten
+                arrContacten[intIndexContactpersoon, 1] = dialogfoto.FileName;
+            }
+        }
+
         ///|/////////////////////////////////////////////////////////////////////////////////////
         //|Eigen functies
         ///|/////////////////////////////////////////////////////////////////////////////////////
@@ -352,6 +376,9 @@ namespace prjSofoTaakKlassesEnObjecten
             txtTelefoonnummer.Text = tijdelijkContactpersoon.Telefoonnummer;
             txtEmailadres.Text = tijdelijkContactpersoon.Emailadres;
 
+            //foto toevoegen aan picturebox
+            picProfilePicture.ImageLocation = tijdelijkContactpersoon.ProfielfotoPad;
+
             //adres
             txtStraatnaam.Text = tijdelijkContactpersoon.Straatnaam;
             txtHuisnummer.Text = tijdelijkContactpersoon.Huisnummer;
@@ -368,6 +395,7 @@ namespace prjSofoTaakKlassesEnObjecten
             txtStad.Text = tijdelijkContactpersoon.Stad;
             
         }
+
 
     }
 }

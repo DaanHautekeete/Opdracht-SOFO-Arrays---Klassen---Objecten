@@ -74,6 +74,7 @@
             this.grpbInfo = new System.Windows.Forms.GroupBox();
             this.linklabelGithubRepository = new System.Windows.Forms.LinkLabel();
             this.lblInfo = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.grbCustomProperties.SuspendLayout();
             this.grbAdres.SuspendLayout();
             this.grbAlgemeneInfo.SuspendLayout();
@@ -479,6 +480,7 @@
             this.picProfilePicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picProfilePicture.TabIndex = 6;
             this.picProfilePicture.TabStop = false;
+            this.picProfilePicture.Click += new System.EventHandler(this.picProfilePicture_Click);
             // 
             // grpbMakenWijzigen
             // 
@@ -585,12 +587,16 @@
     " kunt u bekijken op de Github repository door op de link hieronder te klikken.\r\n" +
     "\r\nAlle rechten zijn voorbehouden";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(577, 780);
+            this.ClientSize = new System.Drawing.Size(1093, 780);
             this.Controls.Add(this.grpbInfo);
             this.Controls.Add(this.grpbCustomProperties);
             this.Controls.Add(this.grpbMakenWijzigen);
@@ -668,6 +674,7 @@
         private System.Windows.Forms.GroupBox grpbInfo;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.LinkLabel linklabelGithubRepository;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 
