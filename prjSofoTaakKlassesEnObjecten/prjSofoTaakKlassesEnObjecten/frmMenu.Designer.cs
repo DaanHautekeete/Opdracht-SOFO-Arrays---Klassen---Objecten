@@ -44,10 +44,10 @@
             this.txtStad = new System.Windows.Forms.TextBox();
             this.txtLand = new System.Windows.Forms.TextBox();
             this.txtBus = new System.Windows.Forms.TextBox();
-            this.rdbNeen = new System.Windows.Forms.RadioButton();
-            this.rdbJa = new System.Windows.Forms.RadioButton();
+            this.rdbMeerdereBussenFalse = new System.Windows.Forms.RadioButton();
+            this.rdbMeerdereBussenTrue = new System.Windows.Forms.RadioButton();
             this.txtHuisnummer = new System.Windows.Forms.TextBox();
-            this.txtAdres = new System.Windows.Forms.TextBox();
+            this.txtStraatnaam = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -72,8 +72,8 @@
             this.grpbCustomProperties = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.grpbInfo = new System.Windows.Forms.GroupBox();
-            this.lblInfo = new System.Windows.Forms.Label();
             this.linklabelGithubRepository = new System.Windows.Forms.LinkLabel();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.grbCustomProperties.SuspendLayout();
             this.grbAdres.SuspendLayout();
             this.grbAlgemeneInfo.SuspendLayout();
@@ -87,26 +87,26 @@
             // 
             this.lsbContactpersonen.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.lsbContactpersonen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lsbContactpersonen.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsbContactpersonen.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsbContactpersonen.FormattingEnabled = true;
-            this.lsbContactpersonen.ItemHeight = 14;
-            this.lsbContactpersonen.Items.AddRange(new object[] {
-            "test"});
+            this.lsbContactpersonen.ItemHeight = 23;
             this.lsbContactpersonen.Location = new System.Drawing.Point(12, 183);
             this.lsbContactpersonen.Name = "lsbContactpersonen";
-            this.lsbContactpersonen.Size = new System.Drawing.Size(557, 254);
+            this.lsbContactpersonen.ScrollAlwaysVisible = true;
+            this.lsbContactpersonen.Size = new System.Drawing.Size(557, 232);
             this.lsbContactpersonen.TabIndex = 0;
+            this.lsbContactpersonen.SelectedIndexChanged += new System.EventHandler(this.lsbContactpersonen_SelectedIndexChanged);
             // 
             // lsbBasisinfoContactpersonen
             // 
             this.lsbBasisinfoContactpersonen.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.lsbBasisinfoContactpersonen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lsbBasisinfoContactpersonen.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lsbBasisinfoContactpersonen.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsbBasisinfoContactpersonen.FormattingEnabled = true;
-            this.lsbBasisinfoContactpersonen.ItemHeight = 14;
+            this.lsbBasisinfoContactpersonen.ItemHeight = 23;
             this.lsbBasisinfoContactpersonen.Location = new System.Drawing.Point(12, 443);
             this.lsbBasisinfoContactpersonen.Name = "lsbBasisinfoContactpersonen";
-            this.lsbBasisinfoContactpersonen.Size = new System.Drawing.Size(557, 170);
+            this.lsbBasisinfoContactpersonen.Size = new System.Drawing.Size(557, 163);
             this.lsbBasisinfoContactpersonen.TabIndex = 1;
             // 
             // btnNieuwContactpersoon
@@ -228,10 +228,10 @@
             this.grbAdres.Controls.Add(this.txtStad);
             this.grbAdres.Controls.Add(this.txtLand);
             this.grbAdres.Controls.Add(this.txtBus);
-            this.grbAdres.Controls.Add(this.rdbNeen);
-            this.grbAdres.Controls.Add(this.rdbJa);
+            this.grbAdres.Controls.Add(this.rdbMeerdereBussenFalse);
+            this.grbAdres.Controls.Add(this.rdbMeerdereBussenTrue);
             this.grbAdres.Controls.Add(this.txtHuisnummer);
-            this.grbAdres.Controls.Add(this.txtAdres);
+            this.grbAdres.Controls.Add(this.txtStraatnaam);
             this.grbAdres.Controls.Add(this.label7);
             this.grbAdres.Controls.Add(this.label8);
             this.grbAdres.Controls.Add(this.label9);
@@ -247,67 +247,69 @@
             // 
             // txtStad
             // 
-            this.txtStad.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStad.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStad.Location = new System.Drawing.Point(298, 132);
             this.txtStad.Name = "txtStad";
-            this.txtStad.Size = new System.Drawing.Size(164, 20);
+            this.txtStad.Size = new System.Drawing.Size(164, 22);
             this.txtStad.TabIndex = 6;
             // 
             // txtLand
             // 
-            this.txtLand.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLand.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLand.Location = new System.Drawing.Point(56, 132);
             this.txtLand.Name = "txtLand";
-            this.txtLand.Size = new System.Drawing.Size(128, 20);
+            this.txtLand.Size = new System.Drawing.Size(128, 22);
             this.txtLand.TabIndex = 5;
             // 
             // txtBus
             // 
-            this.txtBus.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBus.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBus.Location = new System.Drawing.Point(378, 74);
             this.txtBus.Name = "txtBus";
-            this.txtBus.Size = new System.Drawing.Size(84, 20);
+            this.txtBus.Size = new System.Drawing.Size(84, 22);
             this.txtBus.TabIndex = 4;
             // 
-            // rdbNeen
+            // rdbMeerdereBussenFalse
             // 
-            this.rdbNeen.AutoSize = true;
-            this.rdbNeen.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbNeen.Location = new System.Drawing.Point(22, 98);
-            this.rdbNeen.Name = "rdbNeen";
-            this.rdbNeen.Size = new System.Drawing.Size(176, 18);
-            this.rdbNeen.TabIndex = 3;
-            this.rdbNeen.TabStop = true;
-            this.rdbNeen.Text = "Neen, er is slechts 1 postbus";
-            this.rdbNeen.UseVisualStyleBackColor = true;
+            this.rdbMeerdereBussenFalse.AutoSize = true;
+            this.rdbMeerdereBussenFalse.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMeerdereBussenFalse.Location = new System.Drawing.Point(22, 98);
+            this.rdbMeerdereBussenFalse.Name = "rdbMeerdereBussenFalse";
+            this.rdbMeerdereBussenFalse.Size = new System.Drawing.Size(176, 18);
+            this.rdbMeerdereBussenFalse.TabIndex = 3;
+            this.rdbMeerdereBussenFalse.TabStop = true;
+            this.rdbMeerdereBussenFalse.Text = "Neen, er is slechts 1 postbus";
+            this.rdbMeerdereBussenFalse.UseVisualStyleBackColor = true;
+            this.rdbMeerdereBussenFalse.CheckedChanged += new System.EventHandler(this.rdbMeerdereBussenFalse_CheckedChanged);
             // 
-            // rdbJa
+            // rdbMeerdereBussenTrue
             // 
-            this.rdbJa.AutoSize = true;
-            this.rdbJa.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbJa.Location = new System.Drawing.Point(22, 75);
-            this.rdbJa.Name = "rdbJa";
-            this.rdbJa.Size = new System.Drawing.Size(191, 18);
-            this.rdbJa.TabIndex = 3;
-            this.rdbJa.TabStop = true;
-            this.rdbJa.Text = "Ja, er zijn meerdere postbussen";
-            this.rdbJa.UseVisualStyleBackColor = true;
+            this.rdbMeerdereBussenTrue.AutoSize = true;
+            this.rdbMeerdereBussenTrue.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbMeerdereBussenTrue.Location = new System.Drawing.Point(22, 75);
+            this.rdbMeerdereBussenTrue.Name = "rdbMeerdereBussenTrue";
+            this.rdbMeerdereBussenTrue.Size = new System.Drawing.Size(191, 18);
+            this.rdbMeerdereBussenTrue.TabIndex = 3;
+            this.rdbMeerdereBussenTrue.TabStop = true;
+            this.rdbMeerdereBussenTrue.Text = "Ja, er zijn meerdere postbussen";
+            this.rdbMeerdereBussenTrue.UseVisualStyleBackColor = true;
+            this.rdbMeerdereBussenTrue.CheckedChanged += new System.EventHandler(this.rdbMeerdereBussenTrue_CheckedChanged);
             // 
             // txtHuisnummer
             // 
-            this.txtHuisnummer.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHuisnummer.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHuisnummer.Location = new System.Drawing.Point(404, 19);
             this.txtHuisnummer.Name = "txtHuisnummer";
-            this.txtHuisnummer.Size = new System.Drawing.Size(58, 20);
+            this.txtHuisnummer.Size = new System.Drawing.Size(58, 22);
             this.txtHuisnummer.TabIndex = 2;
             // 
-            // txtAdres
+            // txtStraatnaam
             // 
-            this.txtAdres.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdres.Location = new System.Drawing.Point(93, 19);
-            this.txtAdres.Name = "txtAdres";
-            this.txtAdres.Size = new System.Drawing.Size(207, 20);
-            this.txtAdres.TabIndex = 1;
+            this.txtStraatnaam.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStraatnaam.Location = new System.Drawing.Point(93, 19);
+            this.txtStraatnaam.Name = "txtStraatnaam";
+            this.txtStraatnaam.Size = new System.Drawing.Size(207, 22);
+            this.txtStraatnaam.TabIndex = 1;
             // 
             // label7
             // 
@@ -398,34 +400,34 @@
             // 
             // txtEmailadres
             // 
-            this.txtEmailadres.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailadres.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailadres.Location = new System.Drawing.Point(92, 124);
             this.txtEmailadres.Name = "txtEmailadres";
-            this.txtEmailadres.Size = new System.Drawing.Size(214, 20);
+            this.txtEmailadres.Size = new System.Drawing.Size(214, 22);
             this.txtEmailadres.TabIndex = 15;
             // 
             // txtTelefoonnummer
             // 
-            this.txtTelefoonnummer.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefoonnummer.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefoonnummer.Location = new System.Drawing.Point(131, 91);
             this.txtTelefoonnummer.Name = "txtTelefoonnummer";
-            this.txtTelefoonnummer.Size = new System.Drawing.Size(175, 20);
+            this.txtTelefoonnummer.Size = new System.Drawing.Size(175, 22);
             this.txtTelefoonnummer.TabIndex = 14;
             // 
             // txtVoornaam
             // 
-            this.txtVoornaam.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtVoornaam.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtVoornaam.Location = new System.Drawing.Point(89, 53);
             this.txtVoornaam.Name = "txtVoornaam";
-            this.txtVoornaam.Size = new System.Drawing.Size(217, 20);
+            this.txtVoornaam.Size = new System.Drawing.Size(217, 22);
             this.txtVoornaam.TabIndex = 12;
             // 
             // txtNaam
             // 
-            this.txtNaam.Font = new System.Drawing.Font("Mongolian Baiti", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNaam.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNaam.Location = new System.Drawing.Point(60, 15);
             this.txtNaam.Name = "txtNaam";
-            this.txtNaam.Size = new System.Drawing.Size(246, 20);
+            this.txtNaam.Size = new System.Drawing.Size(246, 22);
             this.txtNaam.TabIndex = 11;
             // 
             // label4
@@ -491,7 +493,7 @@
             this.grpbMakenWijzigen.Size = new System.Drawing.Size(483, 570);
             this.grpbMakenWijzigen.TabIndex = 12;
             this.grpbMakenWijzigen.TabStop = false;
-            this.grpbMakenWijzigen.Text = "Info komt hier";
+            this.grpbMakenWijzigen.Text = "Nieuw/wijzig/lees contactpersoon";
             // 
             // btnNewCustomProperty
             // 
@@ -547,7 +549,7 @@
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Exit";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // grpbInfo
             // 
@@ -560,17 +562,6 @@
             this.grpbInfo.TabStop = false;
             this.grpbInfo.Text = "Algemene uitleg";
             // 
-            // lblInfo
-            // 
-            this.lblInfo.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfo.Location = new System.Drawing.Point(6, 16);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(544, 91);
-            this.lblInfo.TabIndex = 0;
-            this.lblInfo.Text = "Dit project is gemaakt door: Luka Verbrugghe en Daan Hautekeete.\r\nAlle informatie" +
-    " kunt u bekijken op de Github repository door op de link hieronder te klikken.\r\n" +
-    "\r\nAlle rechten zijn voorbehouden";
-            // 
             // linklabelGithubRepository
             // 
             this.linklabelGithubRepository.AutoSize = true;
@@ -582,6 +573,17 @@
             this.linklabelGithubRepository.TabStop = true;
             this.linklabelGithubRepository.Text = "Github repository";
             this.linklabelGithubRepository.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linklabelGithubRepository_LinkClicked);
+            // 
+            // lblInfo
+            // 
+            this.lblInfo.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Location = new System.Drawing.Point(6, 16);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(544, 91);
+            this.lblInfo.TabIndex = 0;
+            this.lblInfo.Text = "Dit project is gemaakt door: Luka Verbrugghe en Daan Hautekeete.\r\nAlle informatie" +
+    " kunt u bekijken op de Github repository door op de link hieronder te klikken.\r\n" +
+    "\r\nAlle rechten zijn voorbehouden";
             // 
             // frmMenu
             // 
@@ -635,10 +637,10 @@
         private System.Windows.Forms.TextBox txtStad;
         private System.Windows.Forms.TextBox txtLand;
         private System.Windows.Forms.TextBox txtBus;
-        private System.Windows.Forms.RadioButton rdbNeen;
-        private System.Windows.Forms.RadioButton rdbJa;
+        private System.Windows.Forms.RadioButton rdbMeerdereBussenFalse;
+        private System.Windows.Forms.RadioButton rdbMeerdereBussenTrue;
         private System.Windows.Forms.TextBox txtHuisnummer;
-        private System.Windows.Forms.TextBox txtAdres;
+        private System.Windows.Forms.TextBox txtStraatnaam;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
