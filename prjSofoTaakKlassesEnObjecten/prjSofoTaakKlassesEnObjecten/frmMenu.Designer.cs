@@ -38,7 +38,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.grbCustomProperties = new System.Windows.Forms.GroupBox();
             this.btnVerwijder = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
+            this.btnAssignNew = new System.Windows.Forms.Button();
             this.lsbCustomProperties = new System.Windows.Forms.ListBox();
             this.grbAdres = new System.Windows.Forms.GroupBox();
             this.txtStad = new System.Windows.Forms.TextBox();
@@ -185,7 +185,7 @@
             // grbCustomProperties
             // 
             this.grbCustomProperties.Controls.Add(this.btnVerwijder);
-            this.grbCustomProperties.Controls.Add(this.btnNew);
+            this.grbCustomProperties.Controls.Add(this.btnAssignNew);
             this.grbCustomProperties.Controls.Add(this.lsbCustomProperties);
             this.grbCustomProperties.Location = new System.Drawing.Point(6, 367);
             this.grbCustomProperties.Name = "grbCustomProperties";
@@ -205,16 +205,16 @@
             this.btnVerwijder.Text = "VERWIJDER";
             this.btnVerwijder.UseVisualStyleBackColor = true;
             // 
-            // btnNew
+            // btnAssignNew
             // 
-            this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNew.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNew.Location = new System.Drawing.Point(10, 95);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(212, 40);
-            this.btnNew.TabIndex = 1;
-            this.btnNew.Text = "NIEUW";
-            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnAssignNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAssignNew.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAssignNew.Location = new System.Drawing.Point(10, 95);
+            this.btnAssignNew.Name = "btnAssignNew";
+            this.btnAssignNew.Size = new System.Drawing.Size(212, 40);
+            this.btnAssignNew.TabIndex = 1;
+            this.btnAssignNew.Text = "NIEUWE AANWIJZEN";
+            this.btnAssignNew.UseVisualStyleBackColor = true;
             // 
             // lsbCustomProperties
             // 
@@ -638,7 +638,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.GroupBox grbCustomProperties;
         private System.Windows.Forms.Button btnVerwijder;
-        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnAssignNew;
         private System.Windows.Forms.ListBox lsbCustomProperties;
         private System.Windows.Forms.GroupBox grbAdres;
         private System.Windows.Forms.TextBox txtStad;
