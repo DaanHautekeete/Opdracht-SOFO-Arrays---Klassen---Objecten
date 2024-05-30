@@ -21,9 +21,9 @@ namespace prjSofoTaakKlassesEnObjecten
         //kolom 2 => foto's van de contactpersonen
         object[,] arrContacten;
 
-        const int cintStandaardbreedteIngeklapt = 593;
-        const int cintStandaardBreedteUitgeklapt = 1094;
-        const int cintStandaardHoogte = 819;
+        const int cintStandaardbreedteIngeklapt = 591;
+        const int cintStandaardBreedteUitgeklapt = 1109;
+        const int cintStandaardHoogte = 684;
 
         //var aanmaken voor aantal personen in array
         int intIndexContactpersoon = 0;
@@ -102,6 +102,14 @@ namespace prjSofoTaakKlassesEnObjecten
 
         private void btnBekijk_Click(object sender, EventArgs e)
         {
+            Contactpersoon TijdelijkContactpersoon = (Contactpersoon)arrContacten[lsbContactpersonen.SelectedIndex, 0];
+
+            //tekst van groupbox aan het wijzigen
+            grpbMakenWijzigen.Text = TijdelijkContactpersoon.VolledigeNaam + " aan het bekijken";
+
+            //groupbox locken
+            grpbMakenWijzigen.Enabled = false;
+
             //form resizen
             this.Size = new Size(cintStandaardBreedteUitgeklapt, cintStandaardHoogte);
 
@@ -135,6 +143,12 @@ namespace prjSofoTaakKlassesEnObjecten
 
             //form resizen
             this.Size = new Size(cintStandaardbreedteIngeklapt, cintStandaardHoogte);
+
+            //index van contactpersonen veranderen naar 0
+            intIndexContactpersoon = 0;
+
+            //progressbar aanpassen
+            progressBarOpslag.Value = intIndexContactpersoon;
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -146,6 +160,8 @@ namespace prjSofoTaakKlassesEnObjecten
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            picProfilePicture.Visible = true;
+
             //enige vereiste --> naam
             //rest is optioneel
             if (txtNaam.Text.Trim() == string.Empty || txtVoornaam.Text.Trim() == string.Empty)
@@ -217,6 +233,9 @@ namespace prjSofoTaakKlassesEnObjecten
 
                     // Verhoog de index voor de volgende contactpersoon
                     intIndexContactpersoon++;
+
+                    //progressbar updaten
+                    progressBarOpslag.Value = intIndexContactpersoon;
 
                 }
                 else {
@@ -332,7 +351,6 @@ namespace prjSofoTaakKlassesEnObjecten
         //code om foto van gebruiker toe te voegen
         private void picProfilePicture_Click(object sender, EventArgs e)
         {
-
             var dialogfoto = new OpenFileDialog();
 
             if (dialogfoto.ShowDialog() == DialogResult.OK)
@@ -398,7 +416,5 @@ namespace prjSofoTaakKlassesEnObjecten
             txtStad.Text = tijdelijkContactpersoon.Stad;
             
         }
-
-
     }
 }

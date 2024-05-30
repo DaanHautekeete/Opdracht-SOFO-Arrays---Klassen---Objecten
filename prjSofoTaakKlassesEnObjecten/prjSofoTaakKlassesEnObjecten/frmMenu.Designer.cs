@@ -33,13 +33,8 @@
             this.btnNieuwContactpersoon = new System.Windows.Forms.Button();
             this.btnWijzigContactpersoon = new System.Windows.Forms.Button();
             this.btnVerwijderContactpersoon = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.btnBekijk = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.grbCustomProperties = new System.Windows.Forms.GroupBox();
-            this.btnVerwijder = new System.Windows.Forms.Button();
-            this.btnAssignNew = new System.Windows.Forms.Button();
-            this.lsbCustomProperties = new System.Windows.Forms.ListBox();
             this.grbAdres = new System.Windows.Forms.GroupBox();
             this.txtStad = new System.Windows.Forms.TextBox();
             this.txtLand = new System.Windows.Forms.TextBox();
@@ -66,21 +61,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.picProfilePicture = new System.Windows.Forms.PictureBox();
             this.grpbMakenWijzigen = new System.Windows.Forms.GroupBox();
-            this.btnNewCustomProperty = new System.Windows.Forms.Button();
-            this.btnAssign = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.grpbCustomProperties = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.grpbInfo = new System.Windows.Forms.GroupBox();
             this.linklabelGithubRepository = new System.Windows.Forms.LinkLabel();
             this.lblInfo = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.grbCustomProperties.SuspendLayout();
+            this.progressBarOpslag = new System.Windows.Forms.ProgressBar();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblMaxPersonen = new System.Windows.Forms.Label();
             this.grbAdres.SuspendLayout();
             this.grbAlgemeneInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePicture)).BeginInit();
             this.grpbMakenWijzigen.SuspendLayout();
-            this.grpbCustomProperties.SuspendLayout();
             this.grpbInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,7 +97,7 @@
             this.lsbBasisinfoContactpersonen.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lsbBasisinfoContactpersonen.FormattingEnabled = true;
             this.lsbBasisinfoContactpersonen.ItemHeight = 23;
-            this.lsbBasisinfoContactpersonen.Location = new System.Drawing.Point(12, 443);
+            this.lsbBasisinfoContactpersonen.Location = new System.Drawing.Point(11, 470);
             this.lsbBasisinfoContactpersonen.Name = "lsbBasisinfoContactpersonen";
             this.lsbBasisinfoContactpersonen.Size = new System.Drawing.Size(557, 163);
             this.lsbBasisinfoContactpersonen.TabIndex = 1;
@@ -146,18 +138,6 @@
             this.btnVerwijderContactpersoon.UseVisualStyleBackColor = true;
             this.btnVerwijderContactpersoon.Click += new System.EventHandler(this.btnVerwijderContactpersoon_Click);
             // 
-            // btnSettings
-            // 
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Mongolian Baiti", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.Location = new System.Drawing.Point(12, 128);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(275, 49);
-            this.btnSettings.TabIndex = 5;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
-            // 
             // btnBekijk
             // 
             this.btnBekijk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -174,55 +154,13 @@
             // 
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(6, 515);
+            this.btnSave.Location = new System.Drawing.Point(6, 366);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(468, 42);
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // grbCustomProperties
-            // 
-            this.grbCustomProperties.Controls.Add(this.btnVerwijder);
-            this.grbCustomProperties.Controls.Add(this.btnAssignNew);
-            this.grbCustomProperties.Controls.Add(this.lsbCustomProperties);
-            this.grbCustomProperties.Location = new System.Drawing.Point(6, 367);
-            this.grbCustomProperties.Name = "grbCustomProperties";
-            this.grbCustomProperties.Size = new System.Drawing.Size(468, 141);
-            this.grbCustomProperties.TabIndex = 10;
-            this.grbCustomProperties.TabStop = false;
-            this.grbCustomProperties.Text = "Custom Properties";
-            // 
-            // btnVerwijder
-            // 
-            this.btnVerwijder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerwijder.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerwijder.Location = new System.Drawing.Point(245, 95);
-            this.btnVerwijder.Name = "btnVerwijder";
-            this.btnVerwijder.Size = new System.Drawing.Size(217, 40);
-            this.btnVerwijder.TabIndex = 1;
-            this.btnVerwijder.Text = "VERWIJDER";
-            this.btnVerwijder.UseVisualStyleBackColor = true;
-            // 
-            // btnAssignNew
-            // 
-            this.btnAssignNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAssignNew.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAssignNew.Location = new System.Drawing.Point(10, 95);
-            this.btnAssignNew.Name = "btnAssignNew";
-            this.btnAssignNew.Size = new System.Drawing.Size(212, 40);
-            this.btnAssignNew.TabIndex = 1;
-            this.btnAssignNew.Text = "NIEUWE AANWIJZEN";
-            this.btnAssignNew.UseVisualStyleBackColor = true;
-            // 
-            // lsbCustomProperties
-            // 
-            this.lsbCustomProperties.FormattingEnabled = true;
-            this.lsbCustomProperties.Location = new System.Drawing.Point(10, 20);
-            this.lsbCustomProperties.Name = "lsbCustomProperties";
-            this.lsbCustomProperties.Size = new System.Drawing.Size(452, 69);
-            this.lsbCustomProperties.TabIndex = 0;
             // 
             // grbAdres
             // 
@@ -487,67 +425,23 @@
             this.grpbMakenWijzigen.Controls.Add(this.picProfilePicture);
             this.grpbMakenWijzigen.Controls.Add(this.btnSave);
             this.grpbMakenWijzigen.Controls.Add(this.grbAlgemeneInfo);
-            this.grpbMakenWijzigen.Controls.Add(this.grbCustomProperties);
             this.grpbMakenWijzigen.Controls.Add(this.label5);
             this.grpbMakenWijzigen.Controls.Add(this.grbAdres);
             this.grpbMakenWijzigen.Location = new System.Drawing.Point(590, 12);
             this.grpbMakenWijzigen.Name = "grpbMakenWijzigen";
-            this.grpbMakenWijzigen.Size = new System.Drawing.Size(483, 570);
+            this.grpbMakenWijzigen.Size = new System.Drawing.Size(483, 427);
             this.grpbMakenWijzigen.TabIndex = 12;
             this.grpbMakenWijzigen.TabStop = false;
             this.grpbMakenWijzigen.Text = "Nieuw/wijzig/lees contactpersoon";
-            // 
-            // btnNewCustomProperty
-            // 
-            this.btnNewCustomProperty.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewCustomProperty.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewCustomProperty.Location = new System.Drawing.Point(251, 125);
-            this.btnNewCustomProperty.Name = "btnNewCustomProperty";
-            this.btnNewCustomProperty.Size = new System.Drawing.Size(223, 40);
-            this.btnNewCustomProperty.TabIndex = 15;
-            this.btnNewCustomProperty.Text = "New";
-            this.btnNewCustomProperty.UseVisualStyleBackColor = true;
-            // 
-            // btnAssign
-            // 
-            this.btnAssign.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAssign.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAssign.Location = new System.Drawing.Point(7, 125);
-            this.btnAssign.Name = "btnAssign";
-            this.btnAssign.Size = new System.Drawing.Size(223, 40);
-            this.btnAssign.TabIndex = 14;
-            this.btnAssign.Text = "Assign";
-            this.btnAssign.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(6, 19);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(468, 100);
-            this.listBox1.TabIndex = 13;
-            // 
-            // grpbCustomProperties
-            // 
-            this.grpbCustomProperties.Controls.Add(this.listBox1);
-            this.grpbCustomProperties.Controls.Add(this.btnNewCustomProperty);
-            this.grpbCustomProperties.Controls.Add(this.btnAssign);
-            this.grpbCustomProperties.Location = new System.Drawing.Point(590, 588);
-            this.grpbCustomProperties.Name = "grpbCustomProperties";
-            this.grpbCustomProperties.Size = new System.Drawing.Size(483, 174);
-            this.grpbCustomProperties.TabIndex = 16;
-            this.grpbCustomProperties.TabStop = false;
-            this.grpbCustomProperties.Text = "Custom properties";
             // 
             // btnClose
             // 
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Mongolian Baiti", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Location = new System.Drawing.Point(293, 128);
+            this.btnClose.ForeColor = System.Drawing.Color.Red;
+            this.btnClose.Location = new System.Drawing.Point(13, 128);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(275, 49);
+            this.btnClose.Size = new System.Drawing.Size(555, 49);
             this.btnClose.TabIndex = 5;
             this.btnClose.Text = "Exit";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -557,9 +451,9 @@
             // 
             this.grpbInfo.Controls.Add(this.linklabelGithubRepository);
             this.grpbInfo.Controls.Add(this.lblInfo);
-            this.grpbInfo.Location = new System.Drawing.Point(13, 620);
+            this.grpbInfo.Location = new System.Drawing.Point(590, 470);
             this.grpbInfo.Name = "grpbInfo";
-            this.grpbInfo.Size = new System.Drawing.Size(556, 142);
+            this.grpbInfo.Size = new System.Drawing.Size(491, 163);
             this.grpbInfo.TabIndex = 17;
             this.grpbInfo.TabStop = false;
             this.grpbInfo.Text = "Algemene uitleg";
@@ -568,7 +462,7 @@
             // 
             this.linklabelGithubRepository.AutoSize = true;
             this.linklabelGithubRepository.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linklabelGithubRepository.Location = new System.Drawing.Point(6, 117);
+            this.linklabelGithubRepository.Location = new System.Drawing.Point(4, 133);
             this.linklabelGithubRepository.Name = "linklabelGithubRepository";
             this.linklabelGithubRepository.Size = new System.Drawing.Size(118, 16);
             this.linklabelGithubRepository.TabIndex = 1;
@@ -581,7 +475,7 @@
             this.lblInfo.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo.Location = new System.Drawing.Point(6, 16);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(544, 91);
+            this.lblInfo.Size = new System.Drawing.Size(479, 91);
             this.lblInfo.TabIndex = 0;
             this.lblInfo.Text = "Dit project is gemaakt door: Luka Verbrugghe en Daan Hautekeete.\r\nAlle informatie" +
     " kunt u bekijken op de Github repository door op de link hieronder te klikken.\r\n" +
@@ -591,18 +485,47 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // progressBarOpslag
+            // 
+            this.progressBarOpslag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.progressBarOpslag.Location = new System.Drawing.Point(85, 422);
+            this.progressBarOpslag.Name = "progressBarOpslag";
+            this.progressBarOpslag.Size = new System.Drawing.Size(442, 43);
+            this.progressBarOpslag.TabIndex = 18;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(10, 436);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(51, 16);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "Opslag";
+            // 
+            // lblMaxPersonen
+            // 
+            this.lblMaxPersonen.AutoSize = true;
+            this.lblMaxPersonen.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaxPersonen.Location = new System.Drawing.Point(533, 436);
+            this.lblMaxPersonen.Name = "lblMaxPersonen";
+            this.lblMaxPersonen.Size = new System.Drawing.Size(31, 16);
+            this.lblMaxPersonen.TabIndex = 20;
+            this.lblMaxPersonen.Text = "100";
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1093, 780);
+            this.ClientSize = new System.Drawing.Size(1084, 645);
+            this.Controls.Add(this.lblMaxPersonen);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.progressBarOpslag);
             this.Controls.Add(this.grpbInfo);
-            this.Controls.Add(this.grpbCustomProperties);
             this.Controls.Add(this.grpbMakenWijzigen);
             this.Controls.Add(this.btnBekijk);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnVerwijderContactpersoon);
             this.Controls.Add(this.btnWijzigContactpersoon);
             this.Controls.Add(this.btnNieuwContactpersoon);
@@ -611,7 +534,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMenu";
             this.Text = "Contact Manager - Homescreen";
-            this.grbCustomProperties.ResumeLayout(false);
             this.grbAdres.ResumeLayout(false);
             this.grbAdres.PerformLayout();
             this.grbAlgemeneInfo.ResumeLayout(false);
@@ -619,10 +541,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.picProfilePicture)).EndInit();
             this.grpbMakenWijzigen.ResumeLayout(false);
             this.grpbMakenWijzigen.PerformLayout();
-            this.grpbCustomProperties.ResumeLayout(false);
             this.grpbInfo.ResumeLayout(false);
             this.grpbInfo.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -633,13 +555,8 @@
         private System.Windows.Forms.Button btnNieuwContactpersoon;
         private System.Windows.Forms.Button btnWijzigContactpersoon;
         private System.Windows.Forms.Button btnVerwijderContactpersoon;
-        private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.Button btnBekijk;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.GroupBox grbCustomProperties;
-        private System.Windows.Forms.Button btnVerwijder;
-        private System.Windows.Forms.Button btnAssignNew;
-        private System.Windows.Forms.ListBox lsbCustomProperties;
         private System.Windows.Forms.GroupBox grbAdres;
         private System.Windows.Forms.TextBox txtStad;
         private System.Windows.Forms.TextBox txtLand;
@@ -666,15 +583,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picProfilePicture;
         private System.Windows.Forms.GroupBox grpbMakenWijzigen;
-        private System.Windows.Forms.Button btnNewCustomProperty;
-        private System.Windows.Forms.Button btnAssign;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.GroupBox grpbCustomProperties;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.GroupBox grpbInfo;
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.LinkLabel linklabelGithubRepository;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ProgressBar progressBarOpslag;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblMaxPersonen;
     }
 }
 
