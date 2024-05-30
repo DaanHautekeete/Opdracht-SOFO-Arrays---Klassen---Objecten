@@ -30,10 +30,6 @@ namespace prjSofoTaakKlassesEnObjecten
         private string _Land;
         private string _Stad;
 
-        //foto
-        private string _profielfotoPad;
-
-
         //standaardwaarden meegeven voor de eigenschappen
         public Contactpersoon() {
             //algemeen
@@ -49,9 +45,6 @@ namespace prjSofoTaakKlassesEnObjecten
             _Bus = null;
             _Land = "Onbekend";
             _Stad = "Onbekend";
-
-            //foto
-            _profielfotoPad = null;
         }
 
         ///|/////////////////////////////////////////////////////////////////////////////////////
@@ -151,28 +144,17 @@ namespace prjSofoTaakKlassesEnObjecten
             }
         }
 
-        public string ProfielfotoPad {
-            get {
-                return _profielfotoPad;
-            }
-            set {
-                _profielfotoPad = value;
-            }
-        }
-
-
         ///|/////////////////////////////////////////////////////////////////////////////////////
         //|Constructor
         ///|/////////////////////////////////////////////////////////////////////////////////////
 
-        public Contactpersoon(string strNaam, string strVooraam, string strTelefoonnummer, string strEmailadres, string strFilePathFoto, string strStraatnaam, string strHuisnummer, bool blnAppartement, string strBus, string strLand, string strStad)
+        public Contactpersoon(string strNaam, string strVooraam, string strTelefoonnummer, string strEmailadres, string strStraatnaam, string strHuisnummer, bool blnAppartement, string strBus, string strLand, string strStad)
         {
             _Naam = strNaam;
             _Voornaam = strVooraam;
             _VolledigeNaam = strNaam + " " + strVooraam;
             _Telefoonnummer = strTelefoonnummer;
             _Emailadres = strEmailadres;
-            _profielfotoPad = strFilePathFoto;
             _Straatnaam = strStraatnaam;
             _Huisnummer = strHuisnummer;
             _Land = strLand;

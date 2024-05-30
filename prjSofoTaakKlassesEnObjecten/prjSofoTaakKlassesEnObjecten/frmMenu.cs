@@ -204,13 +204,13 @@ namespace prjSofoTaakKlassesEnObjecten
                     contactpersoon.Stad = txtStad.Text;
                 }
 
-                Image image = picProfilePicture.Image;
-                contactpersoon.ProfielfotoPad =  Convert.ToString(image);
 
                 //kijken of er een nieuw contact wordt aangemaakt of als er één gewijzigd wordt
                 if (isNew)
                 {
+                    //objecten en foto in array plaatsen
                     arrContacten[intIndexContactpersoon, 0] = contactpersoon;
+                    arrContacten[intIndexContactpersoon, 1] = picProfilePicture.Image;
 
                     // Voeg de naam van de contactpersoon toe aan de listbox
                     lsbContactpersonen.Items.Add(contactpersoon.VolledigeNaam.ToString());
@@ -220,8 +220,11 @@ namespace prjSofoTaakKlassesEnObjecten
 
                 }
                 else {
-                    //origineel object overschijven
+                    //origineel object overschijven in array
                     arrContacten[lsbContactpersonen.SelectedIndex, 0] = contactpersoon;
+
+                    //foto overschrijven in array
+                    arrContacten[lsbContactpersonen.SelectedIndex, 1] = picProfilePicture.Image;
 
                     //listbox items aanpassen om mogelijke aanpssing in naam of voornaam weer te geven
                     lsbContactpersonen.Items.Clear();
@@ -377,7 +380,7 @@ namespace prjSofoTaakKlassesEnObjecten
             txtEmailadres.Text = tijdelijkContactpersoon.Emailadres;
 
             //foto toevoegen aan picturebox
-            picProfilePicture.ImageLocation = tijdelijkContactpersoon.ProfielfotoPad;
+            picProfilePicture.Image = (Image)arrContacten[lsbContactpersonen.SelectedIndex, 1];
 
             //adres
             txtStraatnaam.Text = tijdelijkContactpersoon.Straatnaam;
