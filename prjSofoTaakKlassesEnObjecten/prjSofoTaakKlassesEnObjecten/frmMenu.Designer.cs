@@ -590,7 +590,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1089, 780);
+            this.ClientSize = new System.Drawing.Size(577, 780);
             this.Controls.Add(this.grpbInfo);
             this.Controls.Add(this.grpbCustomProperties);
             this.Controls.Add(this.grpbMakenWijzigen);
@@ -602,6 +602,7 @@
             this.Controls.Add(this.btnNieuwContactpersoon);
             this.Controls.Add(this.lsbBasisinfoContactpersonen);
             this.Controls.Add(this.lsbContactpersonen);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmMenu";
             this.Text = "Contact Manager - Homescreen";
             this.grbCustomProperties.ResumeLayout(false);

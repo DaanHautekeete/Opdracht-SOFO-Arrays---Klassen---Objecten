@@ -21,9 +21,13 @@ namespace prjSofoTaakKlassesEnObjecten
         //kolom 2 => foto's van de contactpersonen
         object[,] arrContacten;
 
+        const int cintStandaardbreedteIngeklapt = 593;
+        const int cintStandaardBreedteUitgeklapt = 1094;
+        const int cintStandaardHoogte = 819;
+
         //var aanmaken voor aantal personen in array
         int intIndexContactpersoon = 0;
-
+        
         //var voor index geselecteerd contactpersoon
         int intIndexGeselecteerdContactpersoon;
 
@@ -44,6 +48,9 @@ namespace prjSofoTaakKlassesEnObjecten
 
             //groupboxen locken bij opstarten
             grpbMakenWijzigen.Enabled = false;
+
+            //form resizen
+            this.Size = new Size(cintStandaardbreedteIngeklapt, cintStandaardHoogte);
         }
 
         ///|/////////////////////////////////////////////////////////////////////////////////////
@@ -52,6 +59,9 @@ namespace prjSofoTaakKlassesEnObjecten
 
         private void btnNieuwContactpersoon_Click(object sender, EventArgs e)
         {
+            //form resizen
+            this.Size = new Size(cintStandaardBreedteUitgeklapt, cintStandaardHoogte);
+
             //alles resetten van invoer
             InvoerResetten();
 
@@ -71,9 +81,8 @@ namespace prjSofoTaakKlassesEnObjecten
 
         private void btnWijzigContactpersoon_Click(object sender, EventArgs e)
         {
-            //hier komt code om contactpersoon te wijzigen
-            //moeten controleren welke index er geselecteerd is in listbox => index gebruiken voor array met alle objecten
-            //eigenschappen moeten aangepast worden en opnieuw in dezelfde index kunnen opgeslagen worden
+            //form resizen
+            this.Size = new Size(cintStandaardBreedteUitgeklapt, cintStandaardHoogte);
 
             //tijdelijk object aan maken
             Contactpersoon contactpersoonWijzigen = (Contactpersoon)arrContacten[lsbContactpersonen.SelectedIndex, 0];
@@ -93,8 +102,8 @@ namespace prjSofoTaakKlassesEnObjecten
 
         private void btnBekijk_Click(object sender, EventArgs e)
         {
-            //hier komt de code om het contactpersoon te bekijken => niets aanpassen
-            //alle eigenschappen worden ingevuld in de textboxen => textboxen niet kunnen aanpassen
+            //form resizen
+            this.Size = new Size(cintStandaardBreedteUitgeklapt, cintStandaardHoogte);
 
             //eigen fucntie gebruiken om informatie te tonen
             InformatieContactpersoonInladen();
@@ -123,6 +132,9 @@ namespace prjSofoTaakKlassesEnObjecten
                 btnWijzigContactpersoon.Enabled = false;
                 btnBekijk.Enabled = false;
             }
+
+            //form resizen
+            this.Size = new Size(cintStandaardbreedteIngeklapt, cintStandaardHoogte);
         }
 
         private void btnSettings_Click(object sender, EventArgs e)
@@ -240,7 +252,11 @@ namespace prjSofoTaakKlassesEnObjecten
                     //properties van groupbox wijzigen
                     grpbMakenWijzigen.Text = "Nieuw/wijzig/lees contactpersoon";
                     grpbMakenWijzigen.Enabled = false;
+
+                //form resizen
+                this.Size = new Size(cintStandaardbreedteIngeklapt, cintStandaardHoogte);
             }
+
         }
 
         //code om github repository te openen
