@@ -27,6 +27,9 @@ namespace prjSofoTaakKlassesEnObjecten
         //var voor index geselecteerd contactpersoon
         int intIndexGeselecteerdContactpersoon;
 
+        //bool voor save
+        bool isNew = true;
+
         public frmMenu()
         {
             InitializeComponent();
@@ -49,12 +52,21 @@ namespace prjSofoTaakKlassesEnObjecten
 
         private void btnNieuwContactpersoon_Click(object sender, EventArgs e)
         {
+            //alles resetten van invoer
+            InvoerResetten();
+
             //groupbox unlocken
             grpbMakenWijzigen.Enabled = true;
             grpbMakenWijzigen.Text = "Nieuw contactpersoon";
 
             //standaardwaarde meegeven voor keuze appartement
             rdbMeerdereBussenFalse.Checked = true;
+
+            //new contact true
+            isNew = true;
+
+            //focus op eerste textbox
+            txtNaam.Focus();
         }
 
         private void btnWijzigContactpersoon_Click(object sender, EventArgs e)
@@ -63,6 +75,20 @@ namespace prjSofoTaakKlassesEnObjecten
             //moeten controleren welke index er geselecteerd is in listbox => index gebruiken voor array met alle objecten
             //eigenschappen moeten aangepast worden en opnieuw in dezelfde index kunnen opgeslagen worden
 
+            //tijdelijk object aan maken
+            Contactpersoon contactpersoonWijzigen = (Contactpersoon)arrContacten[lsbContactpersonen.SelectedIndex, 0];
+
+            //titel van groupbox wijzigen
+            grpbMakenWijzigen.Text = contactpersoonWijzigen.VolledigeNaam.ToString() + " aan het wijzigen";
+
+            //alle attributen inladen
+            InformatieContactpersoonInladen();
+
+            //grb unlocken om aanpassingen te aanvaarden
+            grpbMakenWijzigen.Enabled = true;
+
+            //geen nieuw contactpersoon
+            isNew = false;
         }
 
         private void btnBekijk_Click(object sender, EventArgs e)
@@ -70,10 +96,16 @@ namespace prjSofoTaakKlassesEnObjecten
             //hier komt de code om het contactpersoon te bekijken => niets aanpassen
             //alle eigenschappen worden ingevuld in de textboxen => textboxen niet kunnen aanpassen
 
+            //eigen fucntie gebruiken om informatie te tonen
+            InformatieContactpersoonInladen();
+
         }
 
         private void btnVerwijderContactpersoon_Click(object sender, EventArgs e)
         {
+            //alle invoer legen
+            InvoerResetten();
+
             //messagebox weergeven met vraag
             DialogResult dlgKeuzeVerwijderen = MessageBox.Show("Bent u zeker dat u alle contactpersonen wilt verwijderen?","Lijst met contactpersonen verwijderen?",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
 
@@ -155,24 +187,59 @@ namespace prjSofoTaakKlassesEnObjecten
                 {
                     contactpersoon.Land = txtLand.Text;
                 }
+                if(txtStad.Text.Trim() != string.Empty)
+                {
+                    contactpersoon.Stad = txtStad.Text;
+                }
 
-                arrContacten[intIndexContactpersoon, 0] = contactpersoon;
+                //kijken of er een nieuw contact wordt aangemaakt of als er één gewijzigd wordt
+                if (isNew)
+                {
+                    arrContacten[intIndexContactpersoon, 0] = contactpersoon;
 
-                // Voeg de naam van de contactpersoon toe aan de listbox
-                lsbContactpersonen.Items.Add(contactpersoon.VolledigeNaam.ToString());
+                    // Voeg de naam van de contactpersoon toe aan de listbox
+                    lsbContactpersonen.Items.Add(contactpersoon.VolledigeNaam.ToString());
 
-                // Verhoog de index voor de volgende contactpersoon
-                intIndexContactpersoon++;
+                    // Verhoog de index voor de volgende contactpersoon
+                    intIndexContactpersoon++;
 
-                //alle invoer verwijderen en groupbox vergrendelen
-                InvoerResetten();
+                }
+                else {
+                    //origineel object overschijven
+                    arrContacten[lsbContactpersonen.SelectedIndex, 0] = contactpersoon;
 
-                //knop voor alle contactpersonen te wissen, inschakelen
-                btnVerwijderContactpersoon.Enabled = true;
+                    //listbox items aanpassen om mogelijke aanpssing in naam of voornaam weer te geven
+                    lsbContactpersonen.Items.Clear();
+                    for (int i = 0; i < arrContacten.GetUpperBound(0); i++)
+                    {
+                        //tijdelijk object dat automatisch wijzigt
+                        Contactpersoon namenVoorContactpersoon = (Contactpersoon)arrContacten[i, 0];
 
-                //properties van groupbox wijzigen
-                grpbMakenWijzigen.Text = "Nieuw/wijzig/lees contactpersoon";
-                grpbMakenWijzigen.Enabled = false;
+                        //controleren als object leeg is
+                        if (namenVoorContactpersoon != null)
+                        {
+                            //als object niet leeg is => volledige naam toevoegen aan listbox van contactpersonen
+                            lsbContactpersonen.Items.Add(namenVoorContactpersoon.VolledigeNaam.ToString());
+                        }
+                        else
+                        {
+                            //als het object leeg is => vroegtijdig loop verlaten
+                            break;
+                        }
+                    }
+
+                    //algemene info resetten
+                    lsbBasisinfoContactpersonen.Items.Clear();
+                }
+                    //alle invoer verwijderen en groupbox vergrendelen
+                    InvoerResetten();
+
+                    //knop voor alle contactpersonen te wissen, inschakelen
+                    btnVerwijderContactpersoon.Enabled = true;
+
+                    //properties van groupbox wijzigen
+                    grpbMakenWijzigen.Text = "Nieuw/wijzig/lees contactpersoon";
+                    grpbMakenWijzigen.Enabled = false;
             }
         }
 
@@ -226,7 +293,7 @@ namespace prjSofoTaakKlassesEnObjecten
         //knop om programma af te sluiten
         private void btnClose_Click(object sender, EventArgs e)
         {
-            DialogResult dlgKeuze = MessageBox.Show("Bent u zeker dat u het programma wilt afsluiten?\nDit resulteert in het verliezen in alle gegevens!", "Programma sluiten", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dlgKeuze = MessageBox.Show("Bent u zeker dat u het programma wilt afsluiten?\nDit resulteert in het verliezen van alle gegevens!", "Programma sluiten", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dlgKeuze == DialogResult.Yes)
             {
@@ -250,13 +317,41 @@ namespace prjSofoTaakKlassesEnObjecten
             txtStraatnaam.Clear();
             txtHuisnummer.Clear();
             rdbMeerdereBussenFalse.Checked = true;
-            //rdbMeerdereBussenTrue.Checked = false;
             txtBus.Clear();
             txtBus.Enabled = false;
             txtLand.Clear();
             txtStad.Clear();
         }
 
+        private void InformatieContactpersoonInladen()
+        {
+            //object maken van contactpersoon in de array
+            Contactpersoon tijdelijkContactpersoon = (Contactpersoon)arrContacten[lsbContactpersonen.SelectedIndex, 0];
+
+            //alle eigenschappen weergeven
+
+            //algemene info
+            txtNaam.Text = tijdelijkContactpersoon.Naam;
+            txtVoornaam.Text = tijdelijkContactpersoon.Voornaam;
+            txtTelefoonnummer.Text = tijdelijkContactpersoon.Telefoonnummer;
+            txtEmailadres.Text = tijdelijkContactpersoon.Emailadres;
+
+            //adres
+            txtStraatnaam.Text = tijdelijkContactpersoon.Straatnaam;
+            txtHuisnummer.Text = tijdelijkContactpersoon.Huisnummer;
+            if(tijdelijkContactpersoon.Appartement == true)
+            {
+                rdbMeerdereBussenTrue.Checked = true;
+            }
+            else
+            {
+                rdbMeerdereBussenFalse.Checked = true;
+            }
+            txtBus.Text = tijdelijkContactpersoon.Bus;
+            txtLand.Text = tijdelijkContactpersoon.Land;
+            txtStad.Text = tijdelijkContactpersoon.Stad;
+            
+        }
 
     }
 }
